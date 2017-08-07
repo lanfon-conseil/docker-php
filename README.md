@@ -1,23 +1,33 @@
 # Supported tags and respective `Dockerfile` links
 
-- [`5.4-cli` (*5.4/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.4/cli/Dockerfile)
-- [`5.4-apache` (*5.4/apache/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.4/apache/Dockerfile)
-- [`5.4-fpm` (*5.4/fpm/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.4/fpm/Dockerfile)
-- [`5.5.6-cli` (*5.5.6/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.5.6/cli/Dockerfile)
-- [`5.5.6-apache` (*5.5.6/apache/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.5.6/apache/Dockerfile)
-- [`5.5.6-fpm` (*5.5.6/fpm/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.5.6/fpm/Dockerfile)
-- [`5.5-cli` (*5.5/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.5/cli/Dockerfile)
-- [`5.5-apache` (*5.5/apache/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.5/apache/Dockerfile)
-- [`5.5-fpm` (*5.5/fpm/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.5/fpm/Dockerfile)
-- [`5.6-cli` (*5.6/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.6/cli/Dockerfile)
-- [`5.6-apache` (*5.6/apache/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.6/apache/Dockerfile)
-- [`5.6-fpm` (*5.6/fpm/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.6/fpm/Dockerfile)
+## Apache - PHP 5.4
 
-For more information about this image and its history, please see the [relevant manifest file (`library/php`)](https://github.com/docker-library/official-images/blob/master/library/php) in the [`docker-library/official-images` GitHub repo](https://github.com/docker-library/official-images).
+- [`5.4-apache` (*5.4/apache/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.4/apache/Dockerfile)
+- [`5.4-apache-xdebug` (*5.4/apache-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.4/apache-xdebug/Dockerfile)
+- [`5.4-cli` (*5.4/cli/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.4/cli/Dockerfile)
+- [`5.4-onbuild` (*5.4/onbuild/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.4/onbuild/Dockerfile)
+
+## Apache - PHP 5.5
+
+- [`5.5-apache` (*5.5/apache/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.5/apache/Dockerfile)
+- [`5.5-apache-xdebug` (*5.5/apache-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.5/apache-xdebug/Dockerfile)
+- [`5.5-cli` (*5.5/cli/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.5/cli/Dockerfile)
+- [`5.5-onbuild` (*5.5/onbuild/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.5/onbuild/Dockerfile)
+
+## Apache - PHP 5.6
+
+- [`5.6-apache` (*5.6/apache/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.6/apache/Dockerfile)
+- [`5.6-apache-xdebug` (*5.6/apache-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.6/apache-xdebug/Dockerfile)
+- [`5.6-cli` (*5.6/cli/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.6/cli/Dockerfile)
+- [`5.6-onbuild` (*5.6/onbuild/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.6/onbuild/Dockerfile)
+
+## More
+
+For more information about these images and there history, please see the [relevant manifest file (`library/php`)](https://github.com/docker-library/official-images/blob/master/library/php) in the [`docker-library/official-images` GitHub repo](https://github.com/docker-library/official-images).
 
 ![logo](https://raw.githubusercontent.com/docker-library/docs/master/php/logo.png)
 
-# How to use this image.
+# How to use these images.
 
 ## With Command Line
 
@@ -96,8 +106,8 @@ We provide two convenient scripts named `docker-php-ext-configure` and `docker-p
 
 For example, if you want to have a PHP-FPM image with `iconv`, `mcrypt` and `gd` extensions, you can inheriting the base image that you like, and write your own `Dockerfile` like this:
 
-```docker
-FROM ozconseil/php:5.6-fpm
+````docker
+FROM ozconseil/php:5.6
 # Install modules
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
@@ -107,8 +117,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install iconv mcrypt \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install gd
-CMD ["php-fpm"]
-```
+````
 
 Remember, you must install dependencies for your extensions manually. If an extension needs custom `configure` arguments, you can use the `docker-php-ext-configure` script like this example.
 

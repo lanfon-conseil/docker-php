@@ -18,17 +18,19 @@ RUN curl -sS https://getcomposer.org/installer \
   && chmod 777 /var/www/composer-cache \
   && composer config -g cache-dir /var/www/composer-cache
 
+# Set the working directory
 WORKDIR /var/www
 
-# npm deps
-ONBUILD COPY package.json /var/www/
+# Copy project files, including (if exist) :
+# - package.json and package-lock.json for npm deps installation
+# - composer.json and composer.lock for composer deps installation
+# - app.json for Dokku deployment
+# - auth.json for Github deployment
+# (these files should be at the root of the project)
+ONBUILD COPY . /var/www/
+
+# Install npm deps
 ONBUILD RUN npm install --unsafe-perm
 
-# Composer deps
-ONBUILD COPY auth.json /var/www/
-ONBUILD COPY composer.json /var/www/
-ONBUILD COPY composer.lock /var/www/
+# Install composer deps
 ONBUILD RUN composer install --prefer-dist --no-progress --no-dev -o
-
-# custom code
-ONBUILD COPY . /var/www/
