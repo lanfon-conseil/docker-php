@@ -21,6 +21,24 @@
 - [`5.6-cli` (*5.6/cli/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.6/cli/Dockerfile)
 - [`5.6-onbuild` (*5.6/onbuild/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.6/onbuild/Dockerfile)
 
+## Apache - PHP 7.0
+
+- [`7.0-apache` (*7.0/apache/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.0/apache/Dockerfile)
+- [`7.0-apache-xdebug` (*7.0/apache-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.0/apache-xdebug/Dockerfile)
+- [`7.0-cli` (*7.0/cli/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.0/cli/Dockerfile)
+- [`7.0-onbuild` (*7.0/onbuild/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.0/onbuild/Dockerfile)
+- [`7.0-varnish` (*7.0/varnish/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.0/varnish/Dockerfile)
+- [`7.0-varnish-xdebug` (*7.0/varnish-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.0/varnish-xdebug/Dockerfile)
+
+## Apache - PHP 7.1
+
+- [`7.1-apache` (*7.1/apache/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.1/apache/Dockerfile)
+- [`7.1-apache-xdebug` (*7.1/apache-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.1/apache-xdebug/Dockerfile)
+- [`7.1-cli` (*7.1/cli/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.1/cli/Dockerfile)
+- [`7.1-onbuild` (*7.1/onbuild/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.1/onbuild/Dockerfile)
+- [`7.1-varnish` (*7.1/varnish/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.1/varnish/Dockerfile)
+- [`7.1-varnish-xdebug` (*7.1/varnish-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.1/varnish-xdebug/Dockerfile)
+
 ## More
 
 For more information about these images and there history, please see the [relevant manifest file (`library/php`)](https://github.com/docker-library/official-images/blob/master/library/php) in the [`docker-library/official-images` GitHub repo](https://github.com/docker-library/official-images).
