@@ -1,4 +1,7 @@
 mirror_github:
   stage: deploy
   script:
-    - git push --mirror git@github.com:OzConseil/docker-php.git
+    - git checkout -f -- .
+    - (git remote add github git@github.com:OzConseil/docker-php.git || :)
+    - git remote set-url github git@github.com:OzConseil/docker-php.git
+    - git push -f github HEAD:refs/heads/master
