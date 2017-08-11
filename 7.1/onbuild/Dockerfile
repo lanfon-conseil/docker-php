@@ -1,5 +1,5 @@
-FROM louisbl/php:7.1-apache
-MAINTAINER louisbl <louisbl@beltramo.me>
+FROM ozconseil/php:7.1-apache
+MAINTAINER ozconseil <dev@ozconseil.com>
 
 # Install Nodejs, Git, ssh & mysql clients
 RUN cd /tmp && curl -sL https://deb.nodesource.com/setup_6.x | bash -

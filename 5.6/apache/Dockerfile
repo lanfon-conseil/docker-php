@@ -1,5 +1,5 @@
 FROM php:5.6-apache
-MAINTAINER ozconseil <team-dev@ozconseil.com>
+MAINTAINER ozconseil <dev@ozconseil.com>
 
 RUN a2enmod rewrite
 

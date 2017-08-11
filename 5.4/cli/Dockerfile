@@ -1,5 +1,5 @@
 FROM php:5.4-cli
-MAINTAINER ozconseil <team-dev@ozconseil.com>
+MAINTAINER ozconseil <dev@ozconseil.com>
 
 RUN apt-get update && apt-get install -y \
     g++ \

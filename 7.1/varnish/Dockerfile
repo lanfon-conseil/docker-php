@@ -1,5 +1,5 @@
-FROM louisbl/php:7.1-apache
-MAINTAINER louisbl <louisbl@beltramo.me>
+FROM ozconseil/php:7.1-apache
+MAINTAINER ozconseil <dev@ozconseil.com>
 
 RUN apt-get update && apt-get install -y apt-transport-https
 RUN curl https://repo.varnish-cache.org/debian/GPG-key.txt | apt-key add -

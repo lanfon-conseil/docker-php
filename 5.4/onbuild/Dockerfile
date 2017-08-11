@@ -1,5 +1,5 @@
 FROM ozconseil/php:5.4-apache
-MAINTAINER ozconseil <team-dev@ozconseil.com>
+MAINTAINER ozconseil <dev@ozconseil.com>
 
 # Install Nodejs, Git, ssh & mysql clients
 RUN cd /tmp && curl -sL https://deb.nodesource.com/setup_4.x | bash -
