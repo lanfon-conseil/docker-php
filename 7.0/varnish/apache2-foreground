@@ -14,6 +14,7 @@ fi
 : "${APACHE_PID_FILE:=${APACHE_RUN_DIR:=/var/run/apache2}/apache2.pid}"
 rm -f "$APACHE_PID_FILE"
 
-echo "Start OzConseil PHP-7.1 Apache"
+echo "Start OzConseil PHP-7.0 Varnish"
+exec service varnish start &
 exec php-fpm &
 exec apache2 -DFOREGROUND "$@"

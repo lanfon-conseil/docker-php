@@ -1,6 +1,8 @@
 FROM ozconseil/php:7.1-apache
 MAINTAINER ozconseil <dev@ozconseil.com>
 
+COPY apache2-foreground /usr/local/bin/
+
 # Install Nodejs, Git, ssh & mysql clients
 RUN cd /tmp && curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get update && apt-get install -y \
