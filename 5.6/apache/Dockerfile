@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN mkdir /usr/include/freetype2/freetype && ln -s /usr/include/freetype2/freetype.h /usr/include/freetype2/freetype/freetype.h
 
-RUN docker-php-ext-configure gd --with-jpeg-dir --with-freetype-dir --enable-gd-native-ttf \
+RUN docker-php-ext-configure gd --with-jpeg-dir --with-freetype-dir \
     && docker-php-ext-install \
     bz2 \
     gd \

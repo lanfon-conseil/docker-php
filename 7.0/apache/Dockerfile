@@ -22,7 +22,7 @@ RUN mkdir /usr/include/freetype2/freetype && ln -s /usr/include/freetype2/freety
 RUN pecl install apcu \
     && docker-php-ext-enable apcu
 
-RUN docker-php-ext-configure gd --with-jpeg-dir --with-freetype-dir --enable-gd-native-ttf \
+RUN docker-php-ext-configure gd --with-jpeg-dir --with-freetype-dir \
     && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
     && docker-php-ext-install -j$(nproc) \
     bz2 \

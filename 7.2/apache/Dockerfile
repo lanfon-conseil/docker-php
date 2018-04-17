@@ -1,23 +1,25 @@
-FROM php:7.1-fpm
+FROM php:7.2-fpm
 MAINTAINER ozconseil <dev@ozconseil.com>
 
 RUN apt-get update && apt-get install -y \
+    apache2 \
+    curl \
     g++ \
     imagemagick \
     libbz2-dev \
     libfreetype6-dev \
     libicu-dev \
     libjpeg62-turbo-dev \
-    libmcrypt-dev \
-    libpng12-dev \
+    libpng-dev \
     libpq-dev \
     libxml2-dev \
     libzip-dev \
-    zlib1g-dev \
+    nano \
     mysql-client \
+    openssl \
+    wget \
+    zlib1g-dev \
   && rm -rf /var/lib/apt/lists/*
-
-RUN mkdir /usr/include/freetype2/freetype && ln -s /usr/include/freetype2/freetype.h /usr/include/freetype2/freetype/freetype.h
 
 RUN pecl install apcu \
     && docker-php-ext-enable apcu
@@ -25,18 +27,17 @@ RUN pecl install apcu \
 RUN docker-php-ext-configure gd --with-jpeg-dir --with-freetype-dir \
     && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
     && docker-php-ext-install -j$(nproc) \
+    bcmath \
     bz2 \
     gd \
     exif \
     intl \
     json \
     mbstring \
-    mcrypt \
-    xmlrpc \
-    bcmath \
+    mysqli \
     opcache \
     pdo_mysql \
-    mysqli \
+    xmlrpc \
     zip
 
 # set recommended PHP.ini settings
@@ -50,8 +51,6 @@ RUN { \
 		echo 'opcache.enable_cli=0'; \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 RUN echo "date.timezone = \"Europe/Paris\"" > /usr/local/etc/php/conf.d/timezone.ini
-
-RUN apt-get update && apt-get install -y apache2-bin apache2.2-common --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 ENV APACHE_CONFDIR /etc/apache2
 ENV APACHE_ENVVARS $APACHE_CONFDIR/envvars

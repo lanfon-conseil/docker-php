@@ -39,6 +39,15 @@
 - [`7.1-varnish` (*7.1/varnish/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.1/varnish/Dockerfile)
 - [`7.1-varnish-xdebug` (*7.1/varnish-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.1/varnish-xdebug/Dockerfile)
 
+## Apache - PHP 7.2
+
+- [`7.2-apache` (*7.2/apache/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.2/apache/Dockerfile)
+- [`7.2-apache-xdebug` (*7.2/apache-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.2/apache-xdebug/Dockerfile)
+- [`7.2-cli` (*7.2/cli/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.2/cli/Dockerfile)
+- [`7.2-onbuild` (*7.2/onbuild/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.2/onbuild/Dockerfile)
+- [`7.2-varnish` (*7.2/varnish/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.2/varnish/Dockerfile)
+- [`7.2-varnish-xdebug` (*7.2/varnish-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.2/varnish-xdebug/Dockerfile)
+
 ## More
 
 For more information about these images and there history, please see the [relevant manifest file (`library/php`)](https://github.com/docker-library/official-images/blob/master/library/php) in the [`docker-library/official-images` GitHub repo](https://github.com/docker-library/official-images).
@@ -142,10 +151,3 @@ Remember, you must install dependencies for your extensions manually. If an exte
 # License
 
 View [license information](http://php.net/license/) for the software contained in this image.
-
-# Supported Docker versions
-
-This image is officially supported on Docker version 1.7.0.
-
-Support for older versions (down to 1.0) is provided on a best-effort basis.
-
