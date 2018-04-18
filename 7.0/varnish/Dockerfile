@@ -3,9 +3,17 @@ MAINTAINER ozconseil <dev@ozconseil.com>
 
 COPY apache2-foreground /usr/local/bin/
 
-RUN apt-get update && apt-get install -y apt-transport-https
-RUN curl https://repo.varnish-cache.org/debian/GPG-key.txt | apt-key add -
-RUN echo "deb https://repo.varnish-cache.org/debian/ jessie varnish-4.1" >> /etc/apt/sources.list.d/varnish-cache.list \
+# Install some packages
+RUN apt-get update && apt-get install -y \
+    apt-transport-https \
+    build-essential \
+    debian-archive-keyring \
+    gnupg2
+
+# Install Varnish
+RUN curl -L https://packagecloud.io/varnishcache/varnish5/gpgkey | apt-key add -
+RUN echo "deb https://packagecloud.io/varnishcache/varnish5/ubuntu/ xenial main" >> /etc/apt/sources.list.d/varnish-cache.list \
+    echo "deb-src https://packagecloud.io/varnishcache/varnish5/ubuntu/ xenial  main" >> /etc/apt/sources.list.d/varnish-cache.list \
   && apt-get update \
   && apt-get install -y varnish
 
