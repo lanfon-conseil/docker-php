@@ -4,19 +4,20 @@ MAINTAINER ozconseil <dev@ozconseil.com>
 # Install Nodejs, Git, ssh & mysql clients
 RUN cd /tmp && curl -sL https://deb.nodesource.com/setup_4.x | bash -
 RUN apt-get update && apt-get install -y \
-   git \
-   openssh-client \
-   mysql-client \
-   nodejs \
-  && rm -rf /var/lib/apt/lists/*
+    build-essential \
+    git \
+    mysql-client \
+    nodejs \
+    openssh-client \
+    && rm -rf /var/lib/apt/lists/*
 RUN npm install npm -g
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer \
-  | php -- --install-dir=/usr/local/bin --filename=composer \
-  && mkdir -p /var/www/composer-cache \
-  && chmod 777 /var/www/composer-cache \
-  && composer config -g cache-dir /var/www/composer-cache
+    | php -- --install-dir=/usr/local/bin --filename=composer \
+    && mkdir -p /var/www/composer-cache \
+    && chmod 777 /var/www/composer-cache \
+    && composer config -g cache-dir /var/www/composer-cache
 
 # Set the working directory
 WORKDIR /var/www

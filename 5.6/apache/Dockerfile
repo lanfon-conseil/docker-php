@@ -1,9 +1,12 @@
 FROM php:5.6-apache
 MAINTAINER ozconseil <dev@ozconseil.com>
 
+RUN a2enmod expires
+RUN a2enmod headers
 RUN a2enmod rewrite
 
 RUN apt-get update && apt-get install -y \
+    curl \
     g++ \
     imagemagick \
     libbz2-dev \
@@ -13,25 +16,34 @@ RUN apt-get update && apt-get install -y \
     libmcrypt-dev \
     libpng12-dev \
     libpq-dev \
+    libxml2-dev \
     libxslt1-dev \
     libzip-dev \
+    nano \
+    mysql-client \
+    openssl \
+    wget \
     zlib1g-dev \
   && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /usr/include/freetype2/freetype && ln -s /usr/include/freetype2/freetype.h /usr/include/freetype2/freetype/freetype.h
 
 RUN docker-php-ext-configure gd --with-jpeg-dir --with-freetype-dir \
-    && docker-php-ext-install \
+    && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
+    && docker-php-ext-install -j$(nproc) \
+    bcmath \
     bz2 \
     gd \
     exif \
     intl \
+    json \
     mbstring \
     mcrypt \
     mysqli \
     mysql \
     opcache \
     pdo_mysql \
+    xmlrpc \
     xsl \
     zip
 

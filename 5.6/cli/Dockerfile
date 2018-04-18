@@ -2,6 +2,7 @@ FROM php:5.6-cli
 MAINTAINER ozconseil <dev@ozconseil.com>
 
 RUN apt-get update && apt-get install -y \
+    curl \
     g++ \
     git \
     imagemagick \
@@ -12,10 +13,13 @@ RUN apt-get update && apt-get install -y \
     libmcrypt-dev \
     libpng12-dev \
     libpq-dev \
+    libxml2-dev \
     libxslt1-dev \
     libzip-dev \
+    nano \
     mysql-client \
-    openssh-client \
+    openssh-client  \
+    wget \
     zlib1g-dev \
   && rm -rf /var/lib/apt/lists/*
 
@@ -23,15 +27,18 @@ RUN mkdir /usr/include/freetype2/freetype && ln -s /usr/include/freetype2/freety
 
 RUN docker-php-ext-configure gd --with-jpeg-dir --with-freetype-dir \
     && docker-php-ext-install \
+    bcmath \
     bz2 \
     gd \
     exif \
     intl \
+    json \
     mbstring \
     mcrypt \
     mysqli \
     mysql \
     pdo_mysql \
+    xmlrpc \
     xsl \
     zip
 
