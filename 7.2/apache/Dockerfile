@@ -12,7 +12,6 @@ RUN apt-get update && apt-get install -y \
     libjpeg62-turbo-dev \
     libpng-dev \
     libpq-dev \
-    libpq-dev \
     libxml2-dev \
     libxslt1-dev \
     libzip-dev \
@@ -90,19 +89,19 @@ RUN set -ex \
 
 # PHP files should be handled by PHP, and should be preferred over any other file type
 RUN { \
-		echo '<FilesMatch \.php$>'; \
-		echo '\tSetHandler "proxy:fcgi://127.0.0.1:9000"'; \
-		echo '</FilesMatch>'; \
-		echo; \
-		echo 'DirectoryIndex disabled'; \
-		echo 'DirectoryIndex index.php index.html'; \
-		echo; \
-		echo '<Directory /var/www/>'; \
-		echo '\tOptions -Indexes'; \
+        echo '<FilesMatch \.php$>'; \
+        echo '\tSetHandler "proxy:fcgi://127.0.0.1:9000"'; \
+        echo '</FilesMatch>'; \
+        echo; \
+        echo 'DirectoryIndex disabled'; \
+        echo 'DirectoryIndex index.php index.html'; \
+        echo; \
+        echo '<Directory /var/www/>'; \
+        echo '\tOptions -Indexes'; \
         echo '\tAllowOverride All'; \
-		echo '</Directory>'; \
-		echo; \
-		echo '<Directory /var/www/html/>'; \
+        echo '</Directory>'; \
+        echo; \
+        echo '<Directory /var/www/html/>'; \
         echo '\tOptions +FollowSymLinks'; \
         echo '\tRewriteEngine On'; \
         echo '\tAllowOverride All'; \

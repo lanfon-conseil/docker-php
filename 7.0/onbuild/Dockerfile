@@ -6,14 +6,16 @@ COPY apache2-foreground /usr/local/bin/
 # Install some packages
 RUN apt-get update && apt-get install -y \
     build-essential \
+    debian-archive-keyring \
     git \
     gnupg2 \
     mysql-client \
-    openssh-client
+    openssh-client \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install Node
 RUN cd /tmp && curl -sL https://deb.nodesource.com/setup_8.x | bash -
-RUN apt-get install -y nodejs \
+RUN apt-get update && apt-get install -y nodejs \
     && rm -rf /var/lib/apt/lists/*
 RUN npm install yarn -g
 

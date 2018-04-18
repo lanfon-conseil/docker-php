@@ -8,13 +8,12 @@ RUN apt-get update && apt-get install -y \
     apt-transport-https \
     build-essential \
     debian-archive-keyring \
-    gnupg2
+    gnupg2 \
+    mysql-client \
+    openssh-client \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install Varnish
-RUN curl -L https://packagecloud.io/varnishcache/varnish5/gpgkey | apt-key add -
-RUN echo "deb https://packagecloud.io/varnishcache/varnish5/ubuntu/ xenial main" >> /etc/apt/sources.list.d/varnish-cache.list \
-    echo "deb-src https://packagecloud.io/varnishcache/varnish5/ubuntu/ xenial  main" >> /etc/apt/sources.list.d/varnish-cache.list \
-  && apt-get update \
-  && apt-get install -y varnish
+RUN curl -s https://packagecloud.io/install/repositories/varnishcache/varnish52/script.deb.sh | bash
 
 EXPOSE 6081

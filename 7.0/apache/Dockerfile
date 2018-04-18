@@ -2,6 +2,8 @@ FROM php:7.0-fpm
 MAINTAINER ozconseil <dev@ozconseil.com>
 
 RUN apt-get update && apt-get install -y \
+    apache2 \
+    curl \
     g++ \
     imagemagick \
     libbz2-dev \
@@ -12,12 +14,14 @@ RUN apt-get update && apt-get install -y \
     libpng12-dev \
     libpq-dev \
     libxml2-dev \
+    libxslt1-dev \
     libzip-dev \
-    zlib1g-dev \
+    nano \
     mysql-client \
+    openssl \
+    wget \
+    zlib1g-dev \
   && rm -rf /var/lib/apt/lists/*
-
-RUN mkdir /usr/include/freetype2/freetype && ln -s /usr/include/freetype2/freetype.h /usr/include/freetype2/freetype/freetype.h
 
 RUN pecl install apcu \
     && docker-php-ext-enable apcu
@@ -25,6 +29,7 @@ RUN pecl install apcu \
 RUN docker-php-ext-configure gd --with-jpeg-dir --with-freetype-dir \
     && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
     && docker-php-ext-install -j$(nproc) \
+    bcmath \
     bz2 \
     gd \
     exif \
@@ -32,11 +37,11 @@ RUN docker-php-ext-configure gd --with-jpeg-dir --with-freetype-dir \
     json \
     mbstring \
     mcrypt \
-    xmlrpc \
-    bcmath \
+    mysqli \
     opcache \
     pdo_mysql \
-    mysqli \
+    xmlrpc \
+    xsl \
     zip
 
 # set recommended PHP.ini settings
@@ -50,8 +55,6 @@ RUN { \
 		echo 'opcache.enable_cli=0'; \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 RUN echo "date.timezone = \"Europe/Paris\"" > /usr/local/etc/php/conf.d/timezone.ini
-
-RUN apt-get update && apt-get install -y apache2-bin apache2.2-common --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 ENV APACHE_CONFDIR /etc/apache2
 ENV APACHE_ENVVARS $APACHE_CONFDIR/envvars
@@ -88,20 +91,31 @@ RUN set -ex \
 
 # PHP files should be handled by PHP, and should be preferred over any other file type
 RUN { \
-		echo '<FilesMatch \.php$>'; \
-		echo '\tSetHandler "proxy:fcgi://127.0.0.1:9000"'; \
-		echo '</FilesMatch>'; \
-		echo; \
-		echo 'DirectoryIndex disabled'; \
-		echo 'DirectoryIndex index.php index.html'; \
-		echo; \
-		echo '<Directory /var/www/>'; \
-		echo '\tOptions -Indexes'; \
-		echo '\tAllowOverride All'; \
-		echo '</Directory>'; \
+        echo '<FilesMatch \.php$>'; \
+        echo '\tSetHandler "proxy:fcgi://127.0.0.1:9000"'; \
+        echo '</FilesMatch>'; \
+        echo; \
+        echo 'DirectoryIndex disabled'; \
+        echo 'DirectoryIndex index.php index.html'; \
+        echo; \
+        echo '<Directory /var/www/>'; \
+        echo '\tOptions -Indexes'; \
+        echo '\tAllowOverride All'; \
+        echo '</Directory>'; \
+        echo; \
+        echo '<Directory /var/www/html/>'; \
+        echo '\tOptions +FollowSymLinks'; \
+        echo '\tRewriteEngine On'; \
+        echo '\tAllowOverride All'; \
+        echo '\tOrder allow,deny'; \
+        echo '\tAllow from all'; \
+        echo '</Directory>'; \
 	} | tee "$APACHE_CONFDIR/conf-available/docker-php.conf" \
 && a2enconf docker-php
 
+RUN a2enmod expires
+RUN a2enmod headers
+RUN a2enmod rewrite
 RUN a2enmod proxy_fcgi
 
 COPY apache2-foreground /usr/local/bin/
