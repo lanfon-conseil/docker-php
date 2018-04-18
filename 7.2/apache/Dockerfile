@@ -99,8 +99,16 @@ RUN { \
 		echo; \
 		echo '<Directory /var/www/>'; \
 		echo '\tOptions -Indexes'; \
-		echo '\tAllowOverride All'; \
+        echo '\tAllowOverride All'; \
 		echo '</Directory>'; \
+		echo; \
+		echo '<Directory /var/www/html/>'; \
+        echo '\tOptions +FollowSymLinks'; \
+        echo '\tRewriteEngine On'; \
+        echo '\tAllowOverride All'; \
+        echo '\tOrder allow,deny'; \
+        echo '\tAllow from all'; \
+        echo '</Directory>'; \
 	} | tee "$APACHE_CONFDIR/conf-available/docker-php.conf" \
 && a2enconf docker-php
 

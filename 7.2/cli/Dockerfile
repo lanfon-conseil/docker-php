@@ -18,7 +18,6 @@ RUN apt-get update && apt-get install -y \
     nano \
     mysql-client \
     openssh-client \
-    openssl \
     wget \
     zlib1g-dev \
   && rm -rf /var/lib/apt/lists/*
@@ -33,7 +32,9 @@ RUN docker-php-ext-configure gd --with-jpeg-dir --with-freetype-dir \
     json \
     mbstring \
     mysqli \
-    pdo_mysql \
+    pdo_mysql  \
+    xmlrpc \
+    xsl \
     zip
 
 RUN echo "date.timezone = \"Europe/Paris\"" > /usr/local/etc/php/conf.d/timezone.ini
