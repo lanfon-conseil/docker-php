@@ -12,7 +12,9 @@ RUN apt-get update && apt-get install -y \
     libjpeg62-turbo-dev \
     libpng-dev \
     libpq-dev \
+    libpq-dev \
     libxml2-dev \
+    libxslt1-dev \
     libzip-dev \
     nano \
     mysql-client \
@@ -38,6 +40,7 @@ RUN docker-php-ext-configure gd --with-jpeg-dir --with-freetype-dir \
     opcache \
     pdo_mysql \
     xmlrpc \
+    xsl \
     zip
 
 # set recommended PHP.ini settings
@@ -101,6 +104,9 @@ RUN { \
 	} | tee "$APACHE_CONFDIR/conf-available/docker-php.conf" \
 && a2enconf docker-php
 
+RUN a2enmod expires
+RUN a2enmod headers
+RUN a2enmod rewrite
 RUN a2enmod proxy_fcgi
 
 COPY apache2-foreground /usr/local/bin/
