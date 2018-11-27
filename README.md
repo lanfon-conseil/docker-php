@@ -45,6 +45,7 @@
 - [`7.2-apache-xdebug` (*7.2/apache-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.2/apache-xdebug/Dockerfile)
 - [`7.2-cli` (*7.2/cli/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.2/cli/Dockerfile)
 - [`7.2-onbuild` (*7.2/onbuild/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.2/onbuild/Dockerfile)
+- [`7.2-onbuild-xdebug` (*7.2/onbuild-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.2/onbuild-xdebug/Dockerfile)
 - [`7.2-varnish` (*7.2/varnish/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.2/varnish/Dockerfile)
 - [`7.2-varnish-xdebug` (*7.2/varnish-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.2/varnish-xdebug/Dockerfile)
 
