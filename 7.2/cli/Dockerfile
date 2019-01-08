@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y \
     nano \
     mysql-client \
     openssh-client \
+    unzip \
     wget \
     zlib1g-dev \
   && rm -rf /var/lib/apt/lists/*

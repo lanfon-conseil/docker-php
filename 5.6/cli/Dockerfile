@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     libicu-dev \
     libjpeg62-turbo-dev \
     libmcrypt-dev \
-    libpng12-dev \
+    libpng-dev \
     libpq-dev \
     libxml2-dev \
     libxslt1-dev \
@@ -19,11 +19,10 @@ RUN apt-get update && apt-get install -y \
     nano \
     mysql-client \
     openssh-client  \
+    unzip \
     wget \
     zlib1g-dev \
   && rm -rf /var/lib/apt/lists/*
-
-RUN mkdir /usr/include/freetype2/freetype && ln -s /usr/include/freetype2/freetype.h /usr/include/freetype2/freetype/freetype.h
 
 RUN docker-php-ext-configure gd --with-jpeg-dir --with-freetype-dir \
     && docker-php-ext-install \
