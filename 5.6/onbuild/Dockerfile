@@ -1,14 +1,19 @@
 FROM ozconseil/php:5.6-apache
 MAINTAINER ozconseil <dev@ozconseil.com>
 
-# Install Nodejs, Git, ssh & mysql clients
-RUN cd /tmp && curl -sL https://deb.nodesource.com/setup_4.x | bash -
+# Install some packages
 RUN apt-get update && apt-get install -y \
     build-essential \
+    debian-archive-keyring \
     git \
+    gnupg2 \
     mysql-client \
-    nodejs \
     openssh-client \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Node.js
+RUN cd /tmp && curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN apt-get update && apt-get install -y nodejs \
     && rm -rf /var/lib/apt/lists/*
 RUN npm install npm -g
 

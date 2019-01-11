@@ -13,11 +13,11 @@ RUN apt-get update && apt-get install -y \
     openssh-client \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Node
-RUN cd /tmp && curl -sL https://deb.nodesource.com/setup_8.x | bash -
+# Install Node.js
+RUN cd /tmp && curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get update && apt-get install -y nodejs \
     && rm -rf /var/lib/apt/lists/*
-RUN npm install yarn -g
+RUN npm install npm -g
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer \
@@ -38,7 +38,7 @@ WORKDIR /var/www
 ONBUILD COPY . /var/www/
 
 # Install npm deps
-ONBUILD RUN yarn
+ONBUILD RUN npm install --unsafe-perm
 
 # Install composer deps
 ONBUILD RUN composer install --prefer-dist --no-progress --no-dev -o
