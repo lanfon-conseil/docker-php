@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
     debian-archive-keyring \
     git \
     gnupg2 \
-    mysql-client \
+    default-mysql-client \
     openssh-client \
     && rm -rf /var/lib/apt/lists/*
 

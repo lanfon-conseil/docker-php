@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
     libxslt1-dev \
     libzip-dev \
     nano \
-    mysql-client \
+    default-mysql-client \
     openssh-client \
     unzip \
     wget \
