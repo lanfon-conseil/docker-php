@@ -33,7 +33,7 @@ docker build -t ozconseil/php:7.2-apache 7.2/apache
 docker build -t ozconseil/php:7.2-apache-xdebug 7.2/apache-xdebug
 docker build -t ozconseil/php:7.2-cli 7.2/cli
 docker build -t ozconseil/php:7.2-onbuild 7.2/onbuild
-docker build -t ozconseil/php:7.2-onbuild 7.2/onbuild-xdebug
+docker build -t ozconseil/php:7.2-onbuild-xdebug 7.2/onbuild-xdebug
 docker build -t ozconseil/php:7.2-varnish 7.2/varnish
 docker build -t ozconseil/php:7.2-varnish-xdebug 7.2/varnish-xdebug
 
@@ -41,6 +41,6 @@ docker build -t ozconseil/php:7.3-apache 7.3/apache
 docker build -t ozconseil/php:7.3-apache-xdebug 7.3/apache-xdebug
 docker build -t ozconseil/php:7.3-cli 7.3/cli
 docker build -t ozconseil/php:7.3-onbuild 7.3/onbuild
-docker build -t ozconseil/php:7.3-onbuild 7.3/onbuild-xdebug
+docker build -t ozconseil/php:7.3-onbuild-xdebug 7.3/onbuild-xdebug
 docker build -t ozconseil/php:7.3-varnish 7.3/varnish
 docker build -t ozconseil/php:7.3-varnish-xdebug 7.3/varnish-xdebug
