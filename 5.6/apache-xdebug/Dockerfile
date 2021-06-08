@@ -1,4 +1,4 @@
-FROM lanfon-conseil/php:5.6-apache
+FROM lanfonconseil/php:5.6-apache
 MAINTAINER lanfon-conseil <contact@lanfon-conseil.com>
 
 COPY xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini

@@ -70,7 +70,7 @@ For PHP projects run through the command line interface (CLI), you can do the fo
 
 ### Create a `Dockerfile` in your PHP project
 
-  FROM lanfon-conseil/php:5.6-cli
+  FROM lanfonconseil/php:5.6-cli
   COPY . /usr/src/myapp
   WORKDIR /usr/src/myapp
   CMD [ "php", "./your-script.php" ]
@@ -86,7 +86,7 @@ More commonly, you will probably want to run PHP in conjunction with Apache http
 
 ### Create a `Dockerfile` in your PHP project
 
-  FROM lanfon-conseil/php:5.6-apache
+  FROM lanfonconseil/php:5.6-apache
   COPY src/ /var/www/html/
 
 Where `src/` is the directory containing all your php code. Then, run the commands to build and run the Docker image:
@@ -96,7 +96,7 @@ Where `src/` is the directory containing all your php code. Then, run the comman
 
 We recommend that you add a custom `php.ini` configuration. `COPY` it into `/usr/local/etc/php` by adding one more line to the Dockerfile above and running the same commands to build and run:
 
-  FROM lanfon-conseil/php:5.6-apache
+  FROM lanfonconseil/php:5.6-apache
   COPY config/php.ini /usr/local/etc/php
   COPY src/ /var/www/html/
 
@@ -142,7 +142,7 @@ We provide two convenient scripts named `docker-php-ext-configure` and `docker-p
 For example, if you want to have a PHP-FPM image with `iconv`, `mcrypt` and `gd` extensions, you can inheriting the base image that you like, and write your own `Dockerfile` like this:
 
 ````docker
-FROM lanfon-conseil/php:5.6
+FROM lanfonconseil/php:5.6
 # Install modules
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \

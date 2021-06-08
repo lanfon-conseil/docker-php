@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     libxml2-dev \
     libxslt1-dev \
+    libonig-dev \
     libzip-dev \
     nano \
     default-mysql-client \
