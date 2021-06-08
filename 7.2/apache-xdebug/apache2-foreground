@@ -37,6 +37,6 @@ for e in "${!APACHE_@}"; do
 	fi
 done
 
-echo "Start OzConseil PHP-7.2 Apache with Xdebug"
+echo "Start lanfon-conseil PHP-7.2 Apache with Xdebug"
 exec php-fpm &
 exec apache2 -DFOREGROUND "$@"

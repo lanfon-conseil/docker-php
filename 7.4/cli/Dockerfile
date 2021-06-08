@@ -1,7 +1,8 @@
-FROM php:5.5-cli
-MAINTAINER ozconseil <dev@ozconseil.com>
+FROM php:7.4-cli
+MAINTAINER lanfon-conseil <contact@lanfon-conseil.com>
 
 RUN apt-get update && apt-get install -y \
+    curl \
     g++ \
     git \
     imagemagick \
@@ -9,29 +10,31 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libicu-dev \
     libjpeg62-turbo-dev \
-    libmcrypt-dev \
     libpng-dev \
     libpq-dev \
+    libxml2-dev \
     libxslt1-dev \
     libzip-dev \
-    mysql-client \
+    nano \
+    default-mysql-client \
     openssh-client \
+    unzip \
+    wget \
     zlib1g-dev \
   && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir /usr/include/freetype2/freetype && ln -s /usr/include/freetype2/freetype.h /usr/include/freetype2/freetype/freetype.h
-
 RUN docker-php-ext-configure gd --with-jpeg-dir --with-freetype-dir \
-    && docker-php-ext-install \
+    && docker-php-ext-install -j$(nproc) \
+    bcmath \
     bz2 \
     gd \
     exif \
     intl \
+    json \
     mbstring \
-    mcrypt \
     mysqli \
-    mysql \
-    pdo_mysql \
+    pdo_mysql  \
+    xmlrpc \
     xsl \
     zip
 

@@ -1,63 +1,59 @@
 # Supported tags and respective `Dockerfile` links
 
-## Apache - PHP 5.4
-
-- [`5.4-apache` (*5.4/apache/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.4/apache/Dockerfile)
-- [`5.4-apache-xdebug` (*5.4/apache-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.4/apache-xdebug/Dockerfile)
-- [`5.4-cli` (*5.4/cli/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.4/cli/Dockerfile)
-- [`5.4-onbuild` (*5.4/onbuild/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.4/onbuild/Dockerfile)
-
-## Apache - PHP 5.5
-
-- [`5.5-apache` (*5.5/apache/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.5/apache/Dockerfile)
-- [`5.5-apache-xdebug` (*5.5/apache-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.5/apache-xdebug/Dockerfile)
-- [`5.5-cli` (*5.5/cli/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.5/cli/Dockerfile)
-- [`5.5-onbuild` (*5.5/onbuild/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.5/onbuild/Dockerfile)
-
 ## Apache - PHP 5.6
 
-- [`5.6-apache` (*5.6/apache/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.6/apache/Dockerfile)
-- [`5.6-apache-xdebug` (*5.6/apache-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.6/apache-xdebug/Dockerfile)
-- [`5.6-cli` (*5.6/cli/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.6/cli/Dockerfile)
-- [`5.6-onbuild` (*5.6/onbuild/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/5.6/onbuild/Dockerfile)
+- [`5.6-apache` (*5.6/apache/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/5.6/apache/Dockerfile)
+- [`5.6-apache-xdebug` (*5.6/apache-xdebug/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/5.6/apache-xdebug/Dockerfile)
+- [`5.6-cli` (*5.6/cli/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/5.6/cli/Dockerfile)
+- [`5.6-onbuild` (*5.6/onbuild/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/5.6/onbuild/Dockerfile)
 
 ## Apache - PHP 7.0
 
-- [`7.0-apache` (*7.0/apache/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.0/apache/Dockerfile)
-- [`7.0-apache-xdebug` (*7.0/apache-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.0/apache-xdebug/Dockerfile)
-- [`7.0-cli` (*7.0/cli/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.0/cli/Dockerfile)
-- [`7.0-onbuild` (*7.0/onbuild/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.0/onbuild/Dockerfile)
-- [`7.0-varnish` (*7.0/varnish/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.0/varnish/Dockerfile)
-- [`7.0-varnish-xdebug` (*7.0/varnish-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.0/varnish-xdebug/Dockerfile)
+- [`7.0-apache` (*7.0/apache/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.0/apache/Dockerfile)
+- [`7.0-apache-xdebug` (*7.0/apache-xdebug/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.0/apache-xdebug/Dockerfile)
+- [`7.0-cli` (*7.0/cli/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.0/cli/Dockerfile)
+- [`7.0-onbuild` (*7.0/onbuild/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.0/onbuild/Dockerfile)
+- [`7.0-varnish` (*7.0/varnish/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.0/varnish/Dockerfile)
+- [`7.0-varnish-xdebug` (*7.0/varnish-xdebug/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.0/varnish-xdebug/Dockerfile)
 
 ## Apache - PHP 7.1
 
-- [`7.1-apache` (*7.1/apache/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.1/apache/Dockerfile)
-- [`7.1-apache-xdebug` (*7.1/apache-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.1/apache-xdebug/Dockerfile)
-- [`7.1-cli` (*7.1/cli/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.1/cli/Dockerfile)
-- [`7.1-onbuild` (*7.1/onbuild/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.1/onbuild/Dockerfile)
-- [`7.1-varnish` (*7.1/varnish/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.1/varnish/Dockerfile)
-- [`7.1-varnish-xdebug` (*7.1/varnish-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.1/varnish-xdebug/Dockerfile)
+- [`7.1-apache` (*7.1/apache/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.1/apache/Dockerfile)
+- [`7.1-apache-xdebug` (*7.1/apache-xdebug/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.1/apache-xdebug/Dockerfile)
+- [`7.1-cli` (*7.1/cli/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.1/cli/Dockerfile)
+- [`7.1-onbuild` (*7.1/onbuild/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.1/onbuild/Dockerfile)
+- [`7.1-varnish` (*7.1/varnish/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.1/varnish/Dockerfile)
+- [`7.1-varnish-xdebug` (*7.1/varnish-xdebug/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.1/varnish-xdebug/Dockerfile)
 
 ## Apache - PHP 7.2
 
-- [`7.2-apache` (*7.2/apache/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.2/apache/Dockerfile)
-- [`7.2-apache-xdebug` (*7.2/apache-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.2/apache-xdebug/Dockerfile)
-- [`7.2-cli` (*7.2/cli/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.2/cli/Dockerfile)
-- [`7.2-onbuild` (*7.2/onbuild/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.2/onbuild/Dockerfile)
-- [`7.2-onbuild-xdebug` (*7.2/onbuild-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.2/onbuild-xdebug/Dockerfile)
-- [`7.2-varnish` (*7.2/varnish/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.2/varnish/Dockerfile)
-- [`7.2-varnish-xdebug` (*7.2/varnish-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.2/varnish-xdebug/Dockerfile)
+- [`7.2-apache` (*7.2/apache/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.2/apache/Dockerfile)
+- [`7.2-apache-xdebug` (*7.2/apache-xdebug/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.2/apache-xdebug/Dockerfile)
+- [`7.2-cli` (*7.2/cli/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.2/cli/Dockerfile)
+- [`7.2-onbuild` (*7.2/onbuild/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.2/onbuild/Dockerfile)
+- [`7.2-onbuild-xdebug` (*7.2/onbuild-xdebug/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.2/onbuild-xdebug/Dockerfile)
+- [`7.2-varnish` (*7.2/varnish/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.2/varnish/Dockerfile)
+- [`7.2-varnish-xdebug` (*7.2/varnish-xdebug/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.2/varnish-xdebug/Dockerfile)
 
 ## Apache - PHP 7.3
 
-- [`7.3-apache` (*7.3/apache/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.3/apache/Dockerfile)
-- [`7.3-apache-xdebug` (*7.3/apache-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.3/apache-xdebug/Dockerfile)
-- [`7.3-cli` (*7.3/cli/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.3/cli/Dockerfile)
-- [`7.3-onbuild` (*7.3/onbuild/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.3/onbuild/Dockerfile)
-- [`7.3-onbuild-xdebug` (*7.3/onbuild-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.3/onbuild-xdebug/Dockerfile)
-- [`7.3-varnish` (*7.3/varnish/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.3/varnish/Dockerfile)
-- [`7.3-varnish-xdebug` (*7.3/varnish-xdebug/Dockerfile*)](https://github.com/OzConseil/docker-php/blob/master/7.3/varnish-xdebug/Dockerfile)
+- [`7.3-apache` (*7.3/apache/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.3/apache/Dockerfile)
+- [`7.3-apache-xdebug` (*7.3/apache-xdebug/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.3/apache-xdebug/Dockerfile)
+- [`7.3-cli` (*7.3/cli/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.3/cli/Dockerfile)
+- [`7.3-onbuild` (*7.3/onbuild/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.3/onbuild/Dockerfile)
+- [`7.3-onbuild-xdebug` (*7.3/onbuild-xdebug/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.3/onbuild-xdebug/Dockerfile)
+- [`7.3-varnish` (*7.3/varnish/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.3/varnish/Dockerfile)
+- [`7.3-varnish-xdebug` (*7.3/varnish-xdebug/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.3/varnish-xdebug/Dockerfile)
+
+## Apache - PHP 7.4
+
+- [`7.4-apache` (*7.4/apache/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.4/apache/Dockerfile)
+- [`7.4-apache-xdebug` (*7.4/apache-xdebug/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.4/apache-xdebug/Dockerfile)
+- [`7.4-cli` (*7.4/cli/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.4/cli/Dockerfile)
+- [`7.4-onbuild` (*7.4/onbuild/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.4/onbuild/Dockerfile)
+- [`7.4-onbuild-xdebug` (*7.4/onbuild-xdebug/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.4/onbuild-xdebug/Dockerfile)
+- [`7.4-varnish` (*7.4/varnish/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.4/varnish/Dockerfile)
+- [`7.4-varnish-xdebug` (*7.4/varnish-xdebug/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.4/varnish-xdebug/Dockerfile)
 
 
 ## More
@@ -74,7 +70,7 @@ For PHP projects run through the command line interface (CLI), you can do the fo
 
 ### Create a `Dockerfile` in your PHP project
 
-  FROM ozconseil/php:5.6-cli
+  FROM lanfon-conseil/php:5.6-cli
   COPY . /usr/src/myapp
   WORKDIR /usr/src/myapp
   CMD [ "php", "./your-script.php" ]
@@ -90,7 +86,7 @@ More commonly, you will probably want to run PHP in conjunction with Apache http
 
 ### Create a `Dockerfile` in your PHP project
 
-  FROM ozconseil/php:5.6-apache
+  FROM lanfon-conseil/php:5.6-apache
   COPY src/ /var/www/html/
 
 Where `src/` is the directory containing all your php code. Then, run the commands to build and run the Docker image:
@@ -100,7 +96,7 @@ Where `src/` is the directory containing all your php code. Then, run the comman
 
 We recommend that you add a custom `php.ini` configuration. `COPY` it into `/usr/local/etc/php` by adding one more line to the Dockerfile above and running the same commands to build and run:
 
-  FROM ozconseil/php:5.6-apache
+  FROM lanfon-conseil/php:5.6-apache
   COPY config/php.ini /usr/local/etc/php
   COPY src/ /var/www/html/
 
@@ -146,7 +142,7 @@ We provide two convenient scripts named `docker-php-ext-configure` and `docker-p
 For example, if you want to have a PHP-FPM image with `iconv`, `mcrypt` and `gd` extensions, you can inheriting the base image that you like, and write your own `Dockerfile` like this:
 
 ````docker
-FROM ozconseil/php:5.6
+FROM lanfon-conseil/php:5.6
 # Install modules
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \

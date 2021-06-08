@@ -37,7 +37,7 @@ for e in "${!APACHE_@}"; do
 	fi
 done
 
-echo "Start OzConseil PHP-7.2 Varnish"
+echo "Start lanfon-conseil PHP-7.2 Varnish"
 exec service varnish start &
 exec php-fpm &
 exec apache2 -DFOREGROUND "$@"

@@ -1,5 +1,5 @@
-FROM ozconseil/php:5.6-apache
-MAINTAINER ozconseil <dev@ozconseil.com>
+FROM lanfon-conseil/php:5.6-apache
+MAINTAINER lanfon-conseil <contact@lanfon-conseil.com>
 
 # Install some packages
 RUN apt-get update && apt-get install -y \

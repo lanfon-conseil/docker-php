@@ -1,5 +1,5 @@
 FROM php:7.0-cli
-MAINTAINER ozconseil <dev@ozconseil.com>
+MAINTAINER lanfon-conseil <contact@lanfon-conseil.com>
 
 RUN apt-get update && apt-get install -y \
     bison \

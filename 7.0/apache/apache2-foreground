@@ -14,6 +14,6 @@ fi
 : "${APACHE_PID_FILE:=${APACHE_RUN_DIR:=/var/run/apache2}/apache2.pid}"
 rm -f "$APACHE_PID_FILE"
 
-echo "Start OzConseil PHP-7.0 Apache"
+echo "Start lanfon-conseil PHP-7.0 Apache"
 exec php-fpm &
 exec apache2 -DFOREGROUND "$@"

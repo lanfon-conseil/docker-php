@@ -1,5 +1,5 @@
 FROM php:5.6-apache
-MAINTAINER ozconseil <dev@ozconseil.com>
+MAINTAINER lanfon-conseil <contact@lanfon-conseil.com>
 
 RUN a2enmod expires
 RUN a2enmod headers

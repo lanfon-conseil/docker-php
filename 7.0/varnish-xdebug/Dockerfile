@@ -1,5 +1,5 @@
-FROM ozconseil/php:7.0-varnish
-MAINTAINER ozconseil <dev@ozconseil.com>
+FROM lanfon-conseil/php:7.0-varnish
+MAINTAINER lanfon-conseil <contact@lanfon-conseil.com>
 
 COPY apache2-foreground /usr/local/bin/
 
