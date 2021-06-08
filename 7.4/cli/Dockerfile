@@ -1,7 +1,27 @@
 FROM php:7.4-cli
 MAINTAINER lanfon-conseil <contact@lanfon-conseil.com>
 
-RUN apt-get update && apt-get install -y git ssh-client \
+RUN apt-get update && apt-get install -y \
+    curl \
+    g++ \
+    git \
+    imagemagick \
+    libbz2-dev \
+    libfreetype6-dev \
+    libicu-dev \
+    libjpeg62-turbo-dev \
+    libpng-dev \
+    libpq-dev \
+    libxml2-dev \
+    libxslt1-dev \
+    libzip-dev \
+    libonig-dev \
+    nano \
+    default-mysql-client \
+    openssh-client \
+    unzip \
+    wget \
+    zlib1g-dev \
   && rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-configure gd --with-jpeg --with-freetype \
