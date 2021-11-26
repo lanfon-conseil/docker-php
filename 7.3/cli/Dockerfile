@@ -36,6 +36,7 @@ RUN docker-php-ext-configure gd --with-jpeg-dir --with-freetype-dir \
     pdo_mysql  \
     xmlrpc \
     xsl \
+    soap \
     zip
 
 RUN echo "date.timezone = \"Europe/Paris\"" > /usr/local/etc/php/conf.d/timezone.ini

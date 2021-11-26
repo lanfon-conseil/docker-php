@@ -41,6 +41,7 @@ RUN docker-php-ext-configure gd --with-jpeg-dir --with-freetype-dir \
     pdo_mysql \
     xmlrpc \
     xsl \
+    soap \
     zip
 
 # set recommended PHP.ini settings
