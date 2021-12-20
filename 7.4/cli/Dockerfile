@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libicu-dev \
     libjpeg62-turbo-dev \
+    libwebp-dev \
     libpng-dev \
     libpq-dev \
     libxml2-dev \
@@ -24,7 +25,7 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev \
   && rm -rf /var/lib/apt/lists/*
 
-RUN docker-php-ext-configure gd --with-jpeg --with-freetype \
+RUN docker-php-ext-configure gd --with-freetype --with-webp --with-jpeg \
     && docker-php-ext-install -j$(nproc) \
     bcmath \
     bz2 \

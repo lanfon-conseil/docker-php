@@ -7,6 +7,8 @@ RUN apt-get update && apt-get install -y \
     g++ \
     imagemagick \
     libbz2-dev \
+    libwebp-dev \
+    libpng-dev \
     libfreetype6-dev \
     libicu-dev \
     libjpeg62-turbo-dev \
@@ -27,7 +29,7 @@ RUN apt-get update && apt-get install -y \
 RUN pecl install apcu \
     && docker-php-ext-enable apcu
 
-RUN docker-php-ext-configure gd --with-jpeg --with-freetype \
+RUN docker-php-ext-configure gd --with-freetype --with-webp --with-jpeg \
     && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
     && docker-php-ext-install -j$(nproc) \
     bcmath \
