@@ -23,6 +23,7 @@ RUN apt-get update && apt-get install -y \
     openssl \
     unzip \
     wget \
+    sendmail \
     zlib1g-dev \
   && rm -rf /var/lib/apt/lists/*
 
