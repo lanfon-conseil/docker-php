@@ -1,4 +1,4 @@
-FROM php:7.4-fpm
+FROM php:8.1-fpm
 MAINTAINER lanfon-conseil <contact@lanfon-conseil.com>
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive && apt-get install -y \
@@ -24,7 +24,6 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive && apt-get install -y \
     openssl \
     unzip \
     wget \
-    sendmail \
     zlib1g-dev \
   && rm -rf /var/lib/apt/lists/*
 

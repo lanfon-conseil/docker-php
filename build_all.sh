@@ -38,7 +38,7 @@ docker build -t lanfonconseil/php:7.3-varnish-xdebug 7.3/varnish-xdebug
 docker build -t lanfonconseil/php:7.4-apache 7.4/apache
 docker build -t lanfonconseil/php:7.4-apache-xdebug 7.4/apache-xdebug
 docker build -t lanfonconseil/php:7.4-cli 7.4/cli
-docker build -t lanfonconseil/php:7.4-onbuild 7.4/onbuild
-docker build -t lanfonconseil/php:7.4-onbuild-xdebug 7.4/onbuild-xdebug
-docker build -t lanfonconseil/php:7.4-varnish 7.4/varnish
-docker build -t lanfonconseil/php:7.4-varnish-xdebug 7.4/varnish-xdebug
+
+docker build -t lanfonconseil/php:8.1-apache 8.1/apache
+docker build -t lanfonconseil/php:8.1-apache-xdebug 8.1/apache-xdebug
+docker build -t lanfonconseil/php:8.1-cli 8.1/cli

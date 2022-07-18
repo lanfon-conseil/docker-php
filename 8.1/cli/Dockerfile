@@ -1,4 +1,4 @@
-FROM php:7.4-cli
+FROM php:8.1-cli
 MAINTAINER lanfon-conseil <contact@lanfon-conseil.com>
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive && apt-get install -y \
