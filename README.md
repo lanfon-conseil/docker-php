@@ -55,6 +55,12 @@
 - [`7.4-varnish` (*7.4/varnish/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.4/varnish/Dockerfile)
 - [`7.4-varnish-xdebug` (*7.4/varnish-xdebug/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/7.4/varnish-xdebug/Dockerfile)
 
+## Apache - PHP 8.1
+
+- [`8.1-apache` (*8.1/apache/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/8.1/apache/Dockerfile)
+- [`8.1-apache-xdebug` (*8.1/apache-xdebug/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/8.1/apache-xdebug/Dockerfile)
+- [`8.1-cli` (*8.1/cli/Dockerfile*)](https://github.com/lanfon-conseil/docker-php/blob/master/8.1/cli/Dockerfile)
+
 
 ## More
 
