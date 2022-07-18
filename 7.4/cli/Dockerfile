@@ -35,7 +35,7 @@ RUN docker-php-ext-configure gd --with-freetype --with-webp --with-jpeg \
     json \
     mbstring \
     mysqli \
-    pdo_mysql  \
+    pdo_mysql \
     xsl \
     soap \
     zip

@@ -1,4 +1,4 @@
-FROM php:8.1-cli
+FROM php:8.1.0-cli
 MAINTAINER lanfon-conseil <contact@lanfon-conseil.com>
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive && apt-get install -y \
@@ -32,10 +32,9 @@ RUN docker-php-ext-configure gd --with-freetype --with-webp --with-jpeg \
     gd \
     exif \
     intl \
-    json \
     mbstring \
     mysqli \
-    pdo_mysql  \
+    pdo_mysql \
     xsl \
     soap \
     zip
