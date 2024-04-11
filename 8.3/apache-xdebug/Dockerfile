@@ -1,4 +1,4 @@
-FROM lanfonconseil/php:7.3-varnish
+FROM lanfonconseil/php:8.3-apache
 MAINTAINER lanfon-conseil <contact@lanfon-conseil.com>
 
 COPY apache2-foreground /usr/local/bin/

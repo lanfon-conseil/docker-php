@@ -1,33 +1,45 @@
-FROM php:7.1-fpm
+FROM php:8.3.0-fpm
 MAINTAINER lanfon-conseil <contact@lanfon-conseil.com>
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive && apt-get install -y \
     apache2 \
     curl \
     g++ \
     imagemagick \
     libbz2-dev \
+    libwebp-dev \
+    libpng-dev \
     libfreetype6-dev \
     libicu-dev \
     libjpeg62-turbo-dev \
-    libmcrypt-dev \
     libpng-dev \
     libpq-dev \
     libxml2-dev \
     libxslt1-dev \
+    libonig-dev \
     libzip-dev \
     nano \
-    mysql-client \
+    default-mysql-client \
+    locales \
     openssl \
     unzip \
     wget \
     zlib1g-dev \
   && rm -rf /var/lib/apt/lists/*
 
+# Generate en_US.UTF-8 and fr_FR.UTF-8 + Use en_US.UTF-8 by default
+RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+    sed -i -e 's/# fr_FR.UTF-8 UTF-8/fr_FR.UTF-8 UTF-8/' /etc/locale.gen && \
+    dpkg-reconfigure --frontend=noninteractive locales && \
+    update-locale LANG=en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_EN:fr_FR
+ENV LC_ALL en_US.UTF-8
+
 RUN pecl install apcu \
     && docker-php-ext-enable apcu
 
-RUN docker-php-ext-configure gd --with-jpeg-dir --with-freetype-dir \
+RUN docker-php-ext-configure gd --with-freetype --with-webp --with-jpeg \
     && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
     && docker-php-ext-install -j$(nproc) \
     bcmath \
@@ -35,14 +47,12 @@ RUN docker-php-ext-configure gd --with-jpeg-dir --with-freetype-dir \
     gd \
     exif \
     intl \
-    json \
     mbstring \
-    mcrypt \
     mysqli \
     opcache \
     pdo_mysql \
-    xmlrpc \
     xsl \
+    soap \
     zip
 
 # set recommended PHP.ini settings

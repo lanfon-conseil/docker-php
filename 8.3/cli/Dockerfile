@@ -1,8 +1,7 @@
-FROM php:7.1-cli
+FROM php:8.3.0-cli
 MAINTAINER lanfon-conseil <contact@lanfon-conseil.com>
 
-RUN apt-get update && apt-get install -y \
-    bison \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive && apt-get install -y \
     curl \
     g++ \
     git \
@@ -11,34 +10,33 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libicu-dev \
     libjpeg62-turbo-dev \
-    libmcrypt-dev \
+    libwebp-dev \
     libpng-dev \
     libpq-dev \
     libxml2-dev \
     libxslt1-dev \
     libzip-dev \
+    libonig-dev \
     nano \
-    mysql-client \
+    default-mysql-client \
     openssh-client \
     unzip \
     wget \
     zlib1g-dev \
   && rm -rf /var/lib/apt/lists/*
 
-RUN docker-php-ext-configure gd --with-jpeg-dir --with-freetype-dir \
+RUN docker-php-ext-configure gd --with-freetype --with-webp --with-jpeg \
     && docker-php-ext-install -j$(nproc) \
     bcmath \
     bz2 \
     gd \
     exif \
     intl \
-    json \
     mbstring \
-    mcrypt \
     mysqli \
-    pdo_mysql  \
-    xmlrpc \
+    pdo_mysql \
     xsl \
+    soap \
     zip
 
 RUN echo "date.timezone = \"Europe/Paris\"" > /usr/local/etc/php/conf.d/timezone.ini

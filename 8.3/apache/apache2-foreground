@@ -37,7 +37,6 @@ for e in "${!APACHE_@}"; do
 	fi
 done
 
-echo "Start lanfon-conseil PHP-7.3 Varnish"
-exec service varnish start &
+echo "Start lanfon-conseil PHP-8.3 Apache"
 exec php-fpm &
 exec apache2 -DFOREGROUND "$@"
